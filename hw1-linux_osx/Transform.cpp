@@ -1,6 +1,6 @@
 // Transform.cpp: implementation of the Transform class.
 
-
+#include <iostream>
 #include "Transform.h"
 #include <cmath>
 
@@ -30,12 +30,14 @@ mat3 Transform::rotate(const float degrees, const vec3& axis) {
 
 // Transforms the camera left around the "crystal ball" interface
 void Transform::left(float degrees, vec3& eye, vec3& up) {
-	// YOUR CODE FOR HW1 HERE
 }
 
 // Transforms the camera up around the "crystal ball" interface
 void Transform::up(float degrees, vec3& eye, vec3& up) {
 	// YOUR CODE FOR HW1 HERE 
+	const auto RotEye = rotate(degrees, vec3(1, 0, 0));
+	// std::cout << RotEye;
+	eye = RotEye * eye;
 }
 
 // Your implementation of the glm::lookAt matrix
