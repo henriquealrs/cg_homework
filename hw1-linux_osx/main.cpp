@@ -148,6 +148,10 @@ void keyboard(unsigned char key,int x,int y) {
 		amount = amountinit;
 		std::cout << "eye and up vectors reset, amount set to " << amountinit << "\n";
 		break;                 
+	case 't':
+		up = vec3(0, 0, -1);
+		eye = vec3(0, 7, 0);
+		break;
 	}
 	glutPostRedisplay();
 }
@@ -271,7 +275,7 @@ int main(int argc,char* argv[]) {
 #else
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 #endif
-	glutCreateWindow("HW1: Transformations");
+	glutCreateWindow("HW1 Mine: Transformations");
 
 #ifndef __APPLE__ // GLew not needed on OSX systems.
 	GLenum err = glewInit() ; 
